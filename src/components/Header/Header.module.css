@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 li, a, button {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
@@ -18,12 +19,13 @@ header {
 
 .logo {
     cursor: pointer;
-    height: 50px;
-    transition: 0.3s;
+    font-family: Pacifico;
+    font-size: 24px;
+    transition: 0.5s;
 }
 
 .logo:hover {
-    height: 54px;
+    color: rgb(39, 4, 46);
 }
 
 .nav__links {

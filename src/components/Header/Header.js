@@ -3,7 +3,7 @@ import styles from './Header.module.css'
 export const Header = () => {
   return (
     <header>
-      <a href=""><img className={styles.logo} src="/images/logo-white-svg.svg" alt="" /></a>
+      <a className={styles.logo} href="">Beauty SoftUni</a>
       <nav>
         <ul className={styles['nav__links']}>
           <li>
