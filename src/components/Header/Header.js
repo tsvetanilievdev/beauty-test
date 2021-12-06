@@ -14,7 +14,7 @@ export const Header = () => {
             <NavLink to="/register">Register</NavLink>
           </li>
           <li>
-            <NavLink to="#">Procedures</NavLink>
+            <NavLink to="/procedures">Procedures</NavLink>
           </li>
           <li>
             <NavLink to="#">Book</NavLink>
@@ -27,7 +27,7 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
-      <a className={styles.cta} href="#">
+      <a className={styles.cta} to="javascript:void(0)">
         <button>My profile</button>
       </a>
     </header>

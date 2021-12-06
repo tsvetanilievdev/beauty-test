@@ -4,6 +4,7 @@ import { Login } from './components/Login/Login.js';
 import { Register } from './components/Register/Register.js';
 import { Home } from './components/Home/Home.js';
 import { Route, Routes } from 'react-router';
+import { Procedures } from './components/Procedures/Procedures.js';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/home" element={<Home />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/register" element={<Register />}/>
+        <Route path="/procedures" element={<Procedures />}/>
       </Routes>
     </div>
   );
