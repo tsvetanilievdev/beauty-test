@@ -112,7 +112,7 @@ export const Procedures = () => {
   ];
 console.log(data.forEach(x => x._id));
   return( 
-    <ul>
+    <>
       {Object.values(data).map(x => <ProcedureCard procedure={x} key={x.id}/>)}
-    </ul>);
+    </>);
 };
