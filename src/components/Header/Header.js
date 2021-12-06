@@ -1,28 +1,29 @@
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css'
 
 export const Header = () => {
   return (
     <header>
-      <a className={styles.logo} href="">Beauty SoftUni</a>
+      <NavLink className={styles.logo} to="/home">Beauty SoftUni</NavLink>
       <nav>
         <ul className={styles['nav__links']}>
           <li>
-            <a href="#">Login</a>
+            <NavLink to="/login">Login</NavLink>
           </li>
           <li>
-            <a href="#">Register</a>
+            <NavLink to="/register">Register</NavLink>
           </li>
           <li>
-            <a href="#">Procedures</a>
+            <NavLink to="#">Procedures</NavLink>
           </li>
           <li>
-            <a href="#">Book</a>
+            <NavLink to="#">Book</NavLink>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <NavLink to="#">Contact Us</NavLink>
           </li>
           <li>
-            <a href="#">Logout</a>
+            <NavLink to="#">Logout</NavLink>
           </li>
         </ul>
       </nav>
