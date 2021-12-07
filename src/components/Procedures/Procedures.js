@@ -1,3 +1,4 @@
+import './Procedures.css';
 import { ProcedureCard } from "./ProcedureCard.js";
 
 export const Procedures = () => {
