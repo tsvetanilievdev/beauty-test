@@ -17,7 +17,7 @@ export const Procedures = () => {
         <button>Search</button>
       </section>
       <section className="all-cards-section">
-        {Object.values(data).map(x => <ProcedureCard procedure={x} key={x.id}/>)}
+        {data.map(x => <ProcedureCard procedure={x} key={x.id}/>)}
       </section>
     </>);
 };
