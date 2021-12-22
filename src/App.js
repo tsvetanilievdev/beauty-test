@@ -12,13 +12,26 @@ import { Route, Routes } from 'react-router';
 import { Procedures } from './components/Procedures/Procedures.js';
 import { ProcedureDetails } from './components/Procedures/ProcedureDetails.js';
 import { useState } from 'react';
+import { saveUserData } from './utils/util.js';
 
 window.api = requester;
 
+
 function App() {
+  const [user, setUser] = useState({
+    id: "",
+    email: "",
+    authToken: "",
+  })
   
+  const onLogin = (data) => {
+    let userData = saveUserData(data);
+    setUser(userData);
+  }
+
+
   return (
-    <AuthContext.Provider value={true}>
+    <AuthContext.Provider value={onLogin}>
       <div className="App">
         <Header />
         <Routes>
