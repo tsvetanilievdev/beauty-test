@@ -1,35 +1,65 @@
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext';
 import styles from './Header.module.css'
 
+const navigationGuest = (
+
+
+  <>
+    <li>
+      <NavLink to="/login">Login</NavLink>
+    </li>
+    <li>
+      <NavLink to="/register">Register</NavLink>
+    </li>
+  </>
+)
+
+const navigationUser = (
+  <>
+    <li>
+      <NavLink to="/booking">Book an hour</NavLink>
+    </li>
+    <li>
+      <NavLink to="/my-bookings">My Bookings</NavLink>
+    </li>
+  </>
+
+)
+
 export const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <header>
       <NavLink className={styles.logo} to="/home">Beauty SoftUni</NavLink>
       <nav>
         <ul className={styles['nav__links']}>
           <li>
-            <NavLink to="/login">Login</NavLink>
-          </li>
-          <li>
-            <NavLink to="/register">Register</NavLink>
-          </li>
-          <li>
             <NavLink to="/procedures">Procedures</NavLink>
           </li>
-          <li>
-            <NavLink to="#">Book</NavLink>
-          </li>
-          <li>
-            <NavLink to="#">Contact Us</NavLink>
-          </li>
-          <li>
-            <NavLink to="#">Logout</NavLink>
-          </li>
+          {user.email
+            ? navigationUser
+            : navigationGuest}
         </ul>
       </nav>
-      <a className={styles.cta} to="javascript:void(0)">
-        <button>My profile</button>
-      </a>
+      {user.email
+        ? (
+          <ul className={styles['nav__links']}>
+
+            <li>
+              <NavLink to="/logout">Logout</NavLink>
+            </li>
+          </ul>
+        )
+        : (
+          <ul className={styles['nav__links']}>
+            <li>
+              <NavLink to="#"></NavLink>
+            </li>
+          </ul>)
+      }
+
     </header>
   );
 };
